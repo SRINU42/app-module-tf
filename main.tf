@@ -117,10 +117,10 @@ resource "null_resource" "ansible"{
   depends_on =[aws_instance.instance, aws_route53_record.dns]
   provisioner "remote-exec" {
     connection {
-    type     = "ssh"
-    user     = "centos"
-    password = "DevOps321"
-    host     = aws_instance.instance.public_ip
+      type     = "ssh"
+      user     = "centos"
+      password = "DevOps321"
+      host     = aws_instance.instance.public_ip
   }
 
     inline = [
